@@ -4,7 +4,7 @@ _This **repository** contains the code for **Cataract Detection** using [CNN Mod
 
 ## Installation
 
-- Environment Setup
+- Environment Setup (Windows)
 
 ```sh
 python -m venv venv

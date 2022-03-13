@@ -1,3 +1,114 @@
+/*
+=============== 
+Google Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(202, 100%, 21%);
+  --clr-primary-2: hsl(202, 98%, 35%);
+  --clr-primary-3: hsl(202, 81%, 50%);
+  --clr-primary-4: hsl(202, 100%, 60%);
+  /* primary/main color */
+  --clr-primary: hsl(204, 100%, 70%);
+  /* lighter shades of primary color */
+  --clr-primary-5: hsl(204, 60%, 74%);
+  --clr-primary-6: hsl(204, 90%, 88%);
+  /* Rigid Colors */
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-error: hsl(0, 100%, 59%);
+  --clr-success: hsl(118, 99%, 41%);
+  --clr-warning: hsl(36, 90%, 51%);
+
+  --spacing: 0.2rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  font-family: 'Roboto Slab', sans-serif;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
 body {
   display: flex;
   height: 100vh;
@@ -11,18 +122,13 @@ body {
   border-radius: 80px;
 }
 .heading {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
   margin-top: 2rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
 .large-btn {
-  background-color: #68c3ff;
-  border-radius: 15px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
+  background-color: var(--clr-primary);
+  border-radius: var(--radius);
   font-size: 28px;
   padding: 1rem;
   margin-top: 2rem;
@@ -30,12 +136,12 @@ body {
   cursor: pointer;
 }
 button {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: var(--light-shadow);
   transition: box-shadow 0.3s ease;
 }
 button:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: var(--dark-shadow);
 }
 button:active {
-  background-color: #7ecafc;
+  background-color: var(--clr-primary-4);
 }
