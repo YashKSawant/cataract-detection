@@ -1,0 +1,11 @@
+@import 'global-styles.css';
+
+.buttons {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.large-btn {
+  width: 50vw;
+  margin: 0.5rem;
+}

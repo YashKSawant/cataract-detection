@@ -1,0 +1,137 @@
+/*
+=============== 
+Google Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(202, 100%, 21%);
+  --clr-primary-2: hsl(202, 98%, 35%);
+  --clr-primary-3: hsl(202, 81%, 50%);
+  --clr-primary-4: hsl(202, 100%, 60%);
+  /* primary/main color */
+  --clr-primary: hsl(204, 100%, 70%);
+  /* lighter shades of primary color */
+  --clr-primary-5: hsl(204, 60%, 74%);
+  --clr-primary-6: hsl(204, 90%, 88%);
+  --clr-primary-7: hsl(201, 33%, 88%);
+  /* Rigid Colors */
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-error: hsl(0, 100%, 59%);
+  --clr-success: hsl(118, 99%, 41%);
+  --clr-warning: hsl(36, 90%, 51%);
+
+  --spacing: 0.2rem;
+  --radius: 0.5rem;
+  --border: 5px soild hsl(0, 0%, 47%);
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  background-color: var(--clr-primary-7);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  box-shadow: var(--light-shadow);
+  transition: box-shadow 0.3s ease;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  font-weight: 400;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  font-family: 'Roboto Slab', sans-serif;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+/*
+=============== 
+Custom Styles
+===============
+*/
+
+.large-btn {
+  background-color: var(--clr-primary);
+  border-radius: var(--radius);
+  font-size: 28px;
+  padding: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: var(--dark-shadow);
+}
+button:active {
+  background-color: var(--clr-primary-4);
+}

@@ -2,8 +2,12 @@ from flask import *
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def main():
     return render_template('home.html', title="Cataract Detection")
+
+@app.route('/index')
+def index():
+    return render_template('index.html',title='Cataract Detection')
 
 if __name__=="__main__":
     app.run()
