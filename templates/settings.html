@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/settings.css')}}">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <main id="settings">
+        <div class="settings">
+            <img src="{{url_for('static', filename='settings.png')}}" alt="settings icon">
+            <h3 class="heading">Settings</h3>
+        </div>
+        <section id="form">
+            <form>
+                <div>
+                    <label for="name">Dr. Name: </label>
+                    <input type="text" placeholder="Enter Name" id="name">
+                </div>
+                <div>
+                    <label for="lab-centre">Lab Centre: </label>
+                    <input type="text" placeholder="Enter Lab Centre" id="lab-centre">
+                </div>
+                <div>
+                    <label for="lab-address">Lab Address: </label>
+                    <textarea type="text" placeholder="Enter Lab Address" id="lab-address"></textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

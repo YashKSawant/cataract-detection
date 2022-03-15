@@ -1,0 +1,22 @@
+@import 'global-styles.css';
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+.heading {
+  margin-top: auto;
+}
+input,
+textarea {
+  font-size: 20px;
+  width: 552px;
+  height: 54px;
+  background: var(--clr-primary-8);
+  border: var(--border);
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 1rem;
+}

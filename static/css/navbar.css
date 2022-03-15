@@ -22,5 +22,14 @@ img {
   margin-right: 1.5rem;
 }
 .settings {
-  margin-right: 2rem;
+  display: flex;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.settings > img {
+  margin-right: 1rem;
+  transition: transform 0.6s ease-in;
+}
+.settings > img:hover {
+  transform: rotate(60deg);
 }

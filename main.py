@@ -9,5 +9,9 @@ def main():
 def index():
     return render_template('index.html',title='Cataract Detection')
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html',title='Cataract Detection')
+
 if __name__=="__main__":
-    app.run()
+    app.run(debug=True)
