@@ -33,7 +33,6 @@ Variables
 
   --spacing: 0.2rem;
   --radius: 0.5rem;
-  --border: 10px soild hsl(0, 1%, 20%);
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   --max-width: 1170px;

@@ -16,18 +16,18 @@
             <img src="{{url_for('static', filename='settings.png')}}" alt="settings icon">
             <h3 class="heading">Settings</h3>
         </div>
-        <section id="form">
-            <form>
-                <div>
+        <section>
+            <form id="form">
+                <div class="form-items">
                     <label for="name">Dr. Name: </label>
-                    <input type="text" placeholder="Enter Name" id="name">
-                </div>
-                <div>
                     <label for="lab-centre">Lab Centre: </label>
-                    <input type="text" placeholder="Enter Lab Centre" id="lab-centre">
-                </div>
-                <div>
                     <label for="lab-address">Lab Address: </label>
+                </div>
+                <div class="divider">
+                </div>
+                <div class="form-items">
+                    <input type="text" placeholder="Enter Name" id="name">
+                    <input type="text" placeholder="Enter Lab Centre" id="lab-centre">
                     <textarea type="text" placeholder="Enter Lab Address" id="lab-address"></textarea>
                 </div>
             </form>
