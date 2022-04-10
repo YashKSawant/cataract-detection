@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+
+<div class="result-cont">
+	<img class="result-image" src="{{url_for('static', filename='blankImage.png')}}" />
+	<div class="result-body">
+		Predicted Result: {{ result }}
+	</div>
+</div>

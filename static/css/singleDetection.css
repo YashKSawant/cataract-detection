@@ -1,0 +1,46 @@
+@import 'global-styles.css';
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.top-cont {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-cont {
+	height: 55%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 24px;
+	padding: 8px;
+	justify-content: center;
+}
+
+.main-image {
+	width: 245px;
+	height: 245px;
+	border-radius: 8px;
+	margin: 16px;
+	box-shadow: var(--light-shadow);
+}
+
+.main-actions {
+	display: flex;
+	justify-content: center;
+}
+
+.single-main-cont {
+	background: #d8d8d8;
+}
+
+input[type="file"] {
+	display: none;
+}
