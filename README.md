@@ -21,6 +21,15 @@ pip install Flask
 ```sh
 set FLASK_APP=main.py
 ```
+OR
+``` sh
+$env:FLASK_APP = "main.py"
+```
+
+### Enable Debug
+``` sh
+$env:FLASK_DEBUG=1
+```
 
 - Running the Application
 

@@ -1,0 +1,31 @@
+.result-cont {
+	background-color: rgb(214, 214, 214);
+	border-radius: 10px;
+	padding: 24px;
+	box-shadow: var(--light-shadow);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-height: 250px;
+}
+
+.result-body {
+	display: flex;
+	flex-direction: column;
+	font-size: 24px;
+	width: 100%;
+}
+
+.verify-btn {
+	background-color: var(--clr-primary-4);
+	font-weight: bold;
+	padding: 10px 16px;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.result-image {
+	max-width: 150px;
+	max-height: 150px;
+}
