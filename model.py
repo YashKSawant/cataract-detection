@@ -27,6 +27,7 @@ y_train=[]
 y_test=[]
 y_pred=[]
 dataset_dir = "./dataset/preprocessed_images"
+input_dir="./static/ImageUploads"
 
 def data_preprocessing():
     print("*************** Data Preprocessing Started ***************")
@@ -156,7 +157,7 @@ def data_evaluate():
     
 
 def predict(filename=[]):
-    global dataset_dir
+    global input_dir
     global image_size
     global y_pred
     inputDataset=[]
@@ -165,11 +166,12 @@ def predict(filename=[]):
     if model==None:
         load_model()
     for img in tqdm(filename):
-        image_path = os.path.join(dataset_dir,img)
+        image_path = os.path.join(input_dir,img)
         try:
             image = cv2.imread(image_path,cv2.IMREAD_COLOR)
             image = cv2.resize(image,(image_size,image_size))
         except:
+            filename.pop(img)
             continue    
         
         inputDataset.append([np.array(image) ,np.array(1)])
@@ -178,10 +180,10 @@ def predict(filename=[]):
 
     prediction = (model.predict(_x) > 0.5).astype("int32")
 
-    print("classifcation report", classification_report(_y, prediction))
     for i in range(len(filename)):
         print("Result", filename[i], ": ", prediction[i])
     print("*************** Data Prediction Ended ***************")
+    return (filename,prediction)
 
 if __name__ == "__main__":
     predict(["0_left.jpg", "0_right.jpg", "1_left.jpg", "1_right.jpg", "2_left.jpg", "2_right.jpg", "24_left.jpg", "24_right.jpg"])

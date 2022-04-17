@@ -6,10 +6,11 @@ from model import *
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = './ImageUploads'
+UPLOAD_FOLDER = './static/ImageUploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
+load_model()
 
 @app.route('/')
 def main():
@@ -51,6 +52,7 @@ def upload_file():
             addFileInJson(filename)
         else:
             errors[file.filename] = 'File type is not allowed'
+    data,result=predict([f.filename for f in files])
 
     if success and errors:
         errors['message'] = 'File(s) successfully uploaded'
@@ -58,7 +60,7 @@ def upload_file():
         resp.status_code = 206
         return resp
     if success:
-        resp = jsonify({'message': 'Files successfully uploaded'})
+        resp = jsonify({'success': True,'data':data,'result':result.tolist()})
         resp.status_code = 201
         return resp
     else:

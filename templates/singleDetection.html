@@ -11,7 +11,8 @@
 
 <body>
     <div class="top-cont">
-        <img class="main-image" src="{{url_for('static', filename='blankImage.png')}}" alt="Placeholder image" />
+        <img class="main-image" id="inputImage" src="{{url_for('static', filename='blankImage.png')}}"
+            alt="Placeholder image" />
         <div class="main-actions">
             <div class="normal-btn" onclick="document.getElementById('fileInput').click();">
                 <input type="file" name="files[]" id="fileInput" multiple="multiple" />Choose Image
