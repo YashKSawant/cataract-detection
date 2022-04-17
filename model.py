@@ -26,6 +26,7 @@ x_test=[]
 y_train=[]
 y_test=[]
 y_pred=[]
+dataset_dir = "./dataset/preprocessed_images"
 
 def data_preprocessing():
     print("*************** Data Preprocessing Started ***************")
@@ -37,6 +38,8 @@ def data_preprocessing():
     global cataract
     global normal
     global dataset
+    global dataset_dir
+
     df = pd.read_csv("./dataset/full_df.csv")
     # df.head()
     def has_cataract(text):
@@ -60,9 +63,6 @@ def data_preprocessing():
     normal = np.concatenate((left_normal,right_normal),axis=0)
 
     print(len(cataract),len(normal))
-
-    dataset_dir = "./dataset/preprocessed_images"
-
 
     def create_dataset(image_category,label):
         global image_size
@@ -155,20 +155,34 @@ def data_evaluate():
 
     
 
-def predict():
+def predict(filename=[]):
+    global dataset_dir
+    global image_size
+    global y_pred
+    inputDataset=[]
     print("*************** Data Prediction Started ***************")
 
     if model==None:
         load_model()
-    global y_pred
-    y_pred = (model.predict(x_test) > 0.5).astype("int32")
-    print("Classificaton Report",classification_report(y_test,y_pred))
+    for img in tqdm(filename):
+        image_path = os.path.join(dataset_dir,img)
+        try:
+            image = cv2.imread(image_path,cv2.IMREAD_COLOR)
+            image = cv2.resize(image,(image_size,image_size))
+        except:
+            continue    
+        
+        inputDataset.append([np.array(image) ,np.array(1)])
+    _x = np.array([i[0] for i in inputDataset]).reshape(-1,image_size,image_size,3)
+    _y = np.array([i[1] for i in inputDataset])
+
+    prediction = (model.predict(_x) > 0.5).astype("int32")
+
+    print("classifcation report", classification_report(_y, prediction))
+    for i in range(len(filename)):
+        print("Result", filename[i], ": ", prediction[i])
     print("*************** Data Prediction Ended ***************")
 
-
-
 if __name__ == "__main__":
-    data_preprocessing()
-    data_evaluate()
-    predict()
+    predict(["0_left.jpg", "0_right.jpg", "1_left.jpg", "1_right.jpg", "2_left.jpg", "2_right.jpg", "24_left.jpg", "24_right.jpg"])
 
