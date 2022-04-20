@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/singleDetection.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
     <title>{{ title }}</title>
 </head>
 
@@ -15,15 +16,23 @@
             alt="Placeholder image" />
         <div class="main-actions">
             <div class="normal-btn" onclick="document.getElementById('fileInput').click();">
-                <input type="file" name="files[]" id="fileInput" multiple="multiple" />Choose Image
+                <input type="file" name="files[]" id="fileInput"  />Choose Image
             </div>
-            <input type="button" class="normal-btn" id="uploadFile" value="Detect" />
+            <button type="button" class="normal-btn" id="uploadFile" value="Detect" style="display: flex; justify-content: space-between;align-items: center;" >
+                <span>Detect</span>
+                <div class="loader"></div>
+            </button>
             </form>
         </div>
     </div>
     <div class="horizontal-seperator"></div>
     <div class="bottom-cont">
-        {% include "result.html" %}
+        <div class="result-cont">
+            <img class="result-image" src="{{url_for('static', filename='blankImage.png')}}" />
+            <div class="result-body" id="body">
+                Predicted Result: Unknown
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="{{url_for('static', filename='/js/singlePage.js') }}"></script>
 </body>

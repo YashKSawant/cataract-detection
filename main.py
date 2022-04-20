@@ -60,7 +60,7 @@ def upload_file():
         resp.status_code = 206
         return resp
     if success:
-        resp = jsonify({'success': True,'data':data,'result':result.tolist()})
+        resp = jsonify({'success': True,'data':data,'result':result.tolist()[0]})
         resp.status_code = 201
         return resp
     else:
