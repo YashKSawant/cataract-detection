@@ -22,11 +22,6 @@ def index():
     return render_template('index.html', title='Cataract Detection')
 
 
-@app.route('/settings')
-def settings():
-    return render_template('settings.html', title='Cataract Detection')
-
-
 @app.route('/single')
 def single():
     return render_template('singleDetection.html', title='Cataract Detection')
