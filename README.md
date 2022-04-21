@@ -4,7 +4,7 @@ _This **repository** contains the code for **Cataract Detection** using [CNN Mod
 
 ## Installation
 
-- Environment Setup (Windows)
+- Environment Setup 
 
 ```sh
 python -m venv venv
@@ -15,18 +15,22 @@ python -m venv venv
 ```
 
 ```sh
-pip install Flask
+pip install -r requirements.txt
 ```
 
 ```sh
 set FLASK_APP=main.py
 ```
+
+```sh
+set FLASK_DEBUG=1
+```
+
 OR
 ``` sh
 $env:FLASK_APP = "main.py"
 ```
 
-### Enable Debug
 ``` sh
 $env:FLASK_DEBUG=1
 ```
